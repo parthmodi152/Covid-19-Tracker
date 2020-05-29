@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="bootstrap-4/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="bootstrap-4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/fontawesome-free-5.13.0-web/css/all.css">
+
+        <!-- Custom JS -->
+
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <title>Covid-19</title>
+    </head>
+    <body>
+        <header class="navbar-section">
+            <nav class="navbar navbar-expand-lg static-top">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="images/logo.png" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ml-auto">
+                            <a class="nav-item nav-link" href="#">Symptoms</a>
+                            <a class="nav-item nav-link" href="#">Precautions</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section class="banner-section">
+            <div class="container banner-container">
+                <div class="row banner-text-row">
+                    <div class="col-12 banner-content">
+                        <h1 class="banner-text-lg">COVID-19 TRACKER</h1>
+                        <h2 class="banner-text-sm">TOTAL CONFIRMED CORONA CASES</h2>
+                        <h1 class="world-cases banner-text-lg world-value"></h1>
+                    </div>
+                    <div class="col-12 banner-img-container">
+                        <img src="images/bg1.png" class="banner-img img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="stats-section stats">
+            <div class="container-fluid stats-container">
+                <div class="corona-wrap">
+                    <div class="corona-count-top latest-report">
+                        <div class="row">
+                            <div class="col-12 my-auto country-box">
+                                <div class="country-name"><div class="country-name-text">Country</div></div>
+                                <div class="change-country">
+                                    <form class="search-country" autocomplete="off" onSubmit="event.preventDefault()">
+                                        <div class="form-items">
+                                            <div class="autocomplete">
+                                                <input id="myInput" type="text" name="myCountry" placeholder="Search Country">
+                                            </div> 
+                                            <div class="submit-button">
+                                                <input type="submit" onclick="changeCountry()">
+                                            </div>
+                                        </div>                                
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="item-container col-md-4 my-auto">
+                                <div class="corona-item">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="corona-thumb">
+                                                <img src="images/purplecorona.png" class="float-right rotating">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="corona-content total-cases">
+                                                <h3 class="value"></h3>
+                                                <h3 class="n-value">+<span class="new-value"></span></h3>
+                                                <p>Total Cases</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-container col-md-4 my-auto">
+                                <div class="corona-item">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="corona-thumb">
+                                                <img src="images/yellowcorona.png" class="float-right rotating">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="corona-content recovered">
+                                                <h3 class="count-number value"></h3>
+                                                <h3 class=""></h3>
+                                                <p>Recovered Cases</p> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-container col-md-4 cmy-auto">
+                                <div class="corona-item">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="corona-thumb">
+                                                <img src="images/redcorona.png" class="float-right rotating" >
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="corona-content deaths">
+                                                <h3 class="count-number value"></h3>
+                                                <h3 class="n-value">+<span class="new-value"></span></h3>
+                                                <p>Deaths</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="corona-count-bottom">
+                        <div class="bottom-heading"><h4>WORLD STATISTICS</h4>
+                        </div>
+                        <iframe class="" src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="100%" height="600px"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container-fluid symptom-container">
+            <div class="lower-img">
+            </div>
+        </div>
+
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="bootstrap-4/js/bootstrap.min.js"></script>
+        <!-- Custom JavaScript -->
+        <script src="js/preloader.js"></script>
+        <script src="js/search-form.js"></script>
+        <script src="js/countries.js"></script>
+        <script src="js/app.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+        <script>
+            autocomplete(document.getElementById("myInput"), countries);
+        </script>
+    </body>
+</html>
