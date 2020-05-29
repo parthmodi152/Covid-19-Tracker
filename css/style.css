@@ -242,6 +242,8 @@ h3.n-value {
     margin: 0;
 }
 
+
+
 /*// BOTTOM PORTION //*/
 
 .corona-count-bottom iframe {
@@ -255,3 +257,13 @@ h3.n-value {
     font-weight: 700;
 }
 
+@media (max-width:600px) {
+    .corona-wrap {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .corona-count-bottom iframe {
+        padding: 0;
+    }
+}
