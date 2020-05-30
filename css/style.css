@@ -12,7 +12,9 @@
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
-
+.hide {
+    display: none;
+}
 /*ROTATE*/
 
 /*---------------- NAVBAR ----------------------*/
@@ -139,17 +141,17 @@ input[type=submit] {
     .submit-button {
         display: block;
     } 
-    
+
     .submit-button input{
         display: block;
         margin: auto;
         margin-top: 7px;
     }
-    
+
     .item-container {
         margin-right: 40px;
     }
- 
+
 }
 /*------------------ STATISTICS ---------------*/
 
@@ -157,14 +159,13 @@ input[type=submit] {
 
 .corona-wrap {
     margin-top: -30px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-bottom: 60px;
     background-color: #f9fcff;
 
     position: relative;
-    z-index: 2;
-
+    z-index: 3;
     padding-top: 5px;
     padding-right: 5px;
     padding-left: 5px;
@@ -188,10 +189,25 @@ input[type=submit] {
     padding: 10px;
     margin: auto;
 }
-form {
-    justify-content: center;
+
+.country-change-button {
+    display: block;
+    margin: auto;
+    margin-top: -20px;
 }
 
+div.total-cases h3 {
+    text-align: center;
+}
+
+form {
+    justify-content: center;
+    z-index: 999;
+}
+
+form.search-country {
+    padding-top: 15px;
+}
 .item-container {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -240,12 +256,50 @@ h3.n-value {
     color: #696969;
     text-align: left;
     margin: 0;
+    z-index: 3;
 }
 
 
 
+
+@media (max-width:600px) {
+    .corona-wrap {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .corona-count-bottom iframe {
+        padding: 0;
+    }
+
+    .item-container {
+        padding-right: 40px;
+    }
+}
+
+/*       Percentage Circles       */
+
+.circle-container{
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+
+.circle-text {
+    font-size: 20px;
+    font-weight: 500;
+    color: #696969;
+    text-align: left;
+    margin: 0;
+    color: black;
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+
+
 /*// BOTTOM PORTION //*/
 
+.world-statistics-graph {
+}
 .corona-count-bottom iframe {
     padding: 5px;
 }
@@ -257,13 +311,13 @@ h3.n-value {
     font-weight: 700;
 }
 
-@media (max-width:600px) {
-    .corona-wrap {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    
-    .corona-count-bottom iframe {
-        padding: 0;
-    }
+/*     Bar Chart        */
+
+.bar-chart {
+  width: 80%;
+  margin: 20px auto;
 }
+
+/*    Footer      */
+
+.page-footer

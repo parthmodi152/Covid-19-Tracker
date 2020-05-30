@@ -12,8 +12,10 @@
 
         <!-- Custom JS -->
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
         <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/css-circle/css/circle.css">
         <link rel="stylesheet" href="css/style.css">
 
         <title>Covid-19</title>
@@ -25,18 +27,18 @@
                     <a class="navbar-brand" href="#">
                         <img src="images/logo.png" alt="">
                     </a>
-<!--
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                        <span class="navbar-toggler-icon"></span>
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav ml-auto">
-                            <a class="nav-item nav-link" href="#">Symptoms</a>
-                            <a class="nav-item nav-link" href="#">Precautions</a>
-                        </div>
-                    </div>
+                    <!--
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+<span class="navbar-toggler-icon"></span>
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+<div class="navbar-nav ml-auto">
+<a class="nav-item nav-link" href="#">Symptoms</a>
+<a class="nav-item nav-link" href="#">Precautions</a>
+</div>
+</div>
 -->
                 </div>
             </nav>
@@ -61,9 +63,17 @@
                     <div class="corona-count-top latest-report">
                         <div class="row">
                             <div class="col-12 my-auto country-box">
-                                <div class="country-name"><div class="country-name-text">Country</div></div>
+                                <div class="country-name">
+                                    <div class="country-name-text">Country</div>
+                                </div>
+                                <div class="button-box">
+                                    <button type="button" class="btn btn-link country-change-button" onclick="openSearchCountryForm()">Change Country</button>
+                                </div>
                                 <div class="change-country">
-                                    <form class="search-country" autocomplete="off" onSubmit="event.preventDefault()">
+                                    <div class="col-12 total-cases">
+                                        <h3>Confirmed Corona Cases:<h3 class="value total-cases-value">1234</h3></h3>
+                                    </div>
+                                    <form class="search-country hide" autocomplete="off" onSubmit="event.preventDefault()">
                                         <div class="form-items">
                                             <div class="autocomplete">
                                                 <input id="myInput" type="text" name="myCountry" placeholder="Search Country">
@@ -73,8 +83,10 @@
                                             </div>
                                         </div>                                
                                     </form>
+
                                 </div>
                             </div>
+
                             <div class="item-container col-md-4 my-auto">
                                 <div class="corona-item">
                                     <div class="row">
@@ -84,10 +96,10 @@
                                             </div>
                                         </div>
                                         <div class="col-6">
-                                            <div class="corona-content total-cases">
+                                            <div class="corona-content active-cases">
                                                 <h3 class="value"></h3>
                                                 <h3 class="n-value">+<span class="new-value"></span></h3>
-                                                <p>Total Cases</p>
+                                                <p>Active Cases</p>
                                             </div>
                                         </div>
                                     </div>
@@ -131,19 +143,67 @@
                             </div>
                         </div>
                     </div>
-                    <div class="corona-count-bottom">
-                        <div class="bottom-heading"><h4>WORLD STATISTICS</h4>
+                    <div class="bottom-section">
+                        <div class="row percentage-circles">
+                            <div class="col-md-6 circle-container d-flex justify-content-center">
+                                <div class="c100 green recovery-rate">
+                                    <span class="recovery-rate-value"></span>
+                                    <div class="slice">
+                                        <div class="bar"></div>
+                                        <div class="fill"></div>
+                                    </div>
+                                </div>
+                                <div class="circle-text my-auto">
+                                    Recovery Rate
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 circle-container d-flex justify-content-center">
+                                <div class="c100 red death-rate">
+                                    <span class="death-rate-value"></span>
+                                    <div class="slice">
+                                        <div class="bar"></div>
+                                        <div class="fill"></div>
+                                    </div>
+                                </div>
+                                <div class="circle-text my-auto">
+                                    Fatility Rate
+                                </div>
+                            </div>
+
+
                         </div>
-                        <iframe class="" src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="100%" height="600px"></iframe>
+
+<!--
+                        <div class="bar-chart">
+                            <canvas id="bar-chart" height="200" width="200"></canvas>
+                        </div>
+-->
+
+                        <div class="corona-count-bottom">
+                            <div class="bottom-heading"><h4>WORLD STATISTICS</h4>
+                            </div>
+                            <iframe class="" src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="100%" height="600px"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="container-fluid symptom-container">
-            <div class="lower-img">
+
+        <footer class="page-footer font-small">
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                <a href="https://github.com/parthmodi152"> Parth Modi</a>
             </div>
-        </div>
+            <!-- Copyright -->
+
+        </footer>
+
+
+
+
 
 
 
@@ -154,13 +214,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="bootstrap-4/js/bootstrap.min.js"></script>
         <!-- Custom JavaScript -->
-        <script src="js/preloader.js"></script>
+        <script src="js/bar-chart.js"></script>
         <script src="js/search-form.js"></script>
         <script src="js/countries.js"></script>
         <script src="js/app.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
 
         <script>
             autocomplete(document.getElementById("myInput"), countries);
