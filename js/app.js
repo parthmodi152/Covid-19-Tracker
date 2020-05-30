@@ -90,8 +90,6 @@ function fetchData(user_country){
         console.log(user_country);
         t_cases = data['response']['0']['cases']['total']
         console.log(t_cases)
-        a_cases = data['response']['0']['cases']['active']
-        console.log(a_cases);
         n_cases = data['response']['0']['cases']['new']
         console.log(n_cases);
         r_cases = data['response']['0']['cases']['recovered']
@@ -100,6 +98,8 @@ function fetchData(user_country){
         console.log(n_deaths);
         t_deaths = data['response']['0']['deaths']['total']
         console.log(t_deaths);
+        a_cases = t_cases - r_cases - t_deaths
+        console.log(a_cases);
         death_rate = t_cases/t_deaths
         recovery_rate = t_cases/r_cases
 
