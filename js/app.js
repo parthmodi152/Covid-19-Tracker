@@ -137,7 +137,7 @@ function UpdateUI(t_cases, a_cases, n_cases, r_cases, t_deaths, n_deaths, recove
     death_rate_element.classList.add("p"+ parseInt(death_rate));
 
 
-    $(".value").counterUp({delay:10, time:2000});
+    $(".value").counterUp({delay:10, time:1000});
 
     $(".new-value").counterUp({delay:10, time:1000});
 
