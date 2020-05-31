@@ -12,7 +12,6 @@
 
         <!-- Custom JS -->
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/css-circle/css/circle.css">
@@ -71,7 +70,7 @@
                                 </div>
                                 <div class="change-country">
                                     <div class="col-12 total-cases">
-                                        <h3>Confirmed Corona Cases:<h3 class="value total-cases-value">1234</h3></h3>
+                                        <h3>Confirmed Corona Cases:<h3 class="value total-cases-value"></h3></h3>
                                     </div>
                                     <form class="search-country hide" autocomplete="off" onSubmit="event.preventDefault()">
                                         <div class="form-items">
@@ -174,16 +173,17 @@
 
                         </div>
 
-<!--
-                        <div class="bar-chart">
-                            <canvas id="bar-chart" height="200" width="200"></canvas>
-                        </div>
+                        <!--
+<div class="bar-chart">
+<canvas id="bar-chart" height="200" width="200"></canvas>
+</div>
 -->
 
                         <div class="corona-count-bottom">
                             <div class="bottom-heading"><h4>WORLD STATISTICS</h4>
                             </div>
                             <iframe class="" src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="100%" height="600px"></iframe>
+
                         </div>
                     </div>
                 </div>
@@ -213,6 +213,18 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="bootstrap-4/js/bootstrap.min.js"></script>
+
+
+
+        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+        <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+        <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+        <script src="https://covid.amCharts.com/data/js/world_timeline.js"></script>
+        <script src="https://covid.amCharts.com/data/js/total_timeline.js"></script>
+        <script src="https://www.amcharts.com/lib/4/themes/kelly.js"></script>
+        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
         <!-- Custom JavaScript -->
         <script src="js/bar-chart.js"></script>
         <script src="js/search-form.js"></script>
@@ -221,6 +233,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
 
 
         <script>

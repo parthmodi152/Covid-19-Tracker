@@ -100,8 +100,8 @@ function fetchData(user_country){
         console.log(t_deaths);
         a_cases = t_cases - r_cases - t_deaths
         console.log(a_cases);
-        death_rate = t_cases/t_deaths
-        recovery_rate = t_cases/r_cases
+        death_rate = (r_cases/t_cases)*100
+        recovery_rate = (t_deaths/t_cases)*100
 
         if (n_deaths == null){
             n_deaths = "+0";
@@ -131,13 +131,13 @@ function UpdateUI(t_cases, a_cases, n_cases, r_cases, t_deaths, n_deaths, recove
     recovered_element.innerHTML = numberWithCommas(r_cases) || 0;
     deaths_element.innerHTML = numberWithCommas(t_deaths) || 0;
     new_deaths_element.innerHTML = numberWithCommas(n_deaths) || 0;
-    recovery_rate_value_element.innerHTML = recovery_rate.toFixed(1) + "%";
-    death_rate_value_element.innerHTML = death_rate.toFixed(1) + "%";
+    recovery_rate_value_element.innerHTML = recovery_rate.toFixed(2) + "%";
+    death_rate_value_element.innerHTML = death_rate.toFixed(2) + "%";
     recovery_rate_element.classList.add("p"+ parseInt(recovery_rate));
     death_rate_element.classList.add("p"+ parseInt(death_rate));
 
 
-    $(".value").counterUp({delay:10, time:1000});
+    $(".value").counterUp({delay:10, time:600});
 
     $(".new-value").counterUp({delay:10, time:1000});
 
